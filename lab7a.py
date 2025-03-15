@@ -20,6 +20,27 @@ def sum_times(t1, t2):
     sum.hour = t1.hour + t2.hour
     sum.minute = t1.minute + t2.minute
     sum.second = t1.second + t2.second
+...
+...
+def sum_times(t1, t2):
+    """Add two time objests and return the sum."""
+    sum = Time(0,0,0)
+    sum.hour = t1.hour + t2.hour
+    sum.minute = t1.minute + t2.minute
+    sum.second = t1.second + t2.second
+    
+    #[ insert python code here to check for minute and second 
+    #[ attribute here, and carry over when necessary
+    #[
+
+    while sum.minute >= 60:
+        sum.hour = sum.hour + 1
+        sum.minute = sum.minute - 60
+
+    while sum.second >= 60:
+        sum.minute = sum.minute + 1
+        sum.second = sum.second - 60
+
     return sum
 
 def valid_time(t):
