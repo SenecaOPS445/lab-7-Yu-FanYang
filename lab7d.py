@@ -25,10 +25,11 @@ class Time:
         return sum
 
     def change_time(self, seconds):
-        time_seconds = self.time_to_sec()
-        nt = sec_to_time(time_seconds + seconds)
+        time_seconds = self.time_to_sec() #the number will be seconds
+        nt = sec_to_time(time_seconds + seconds) #nt will be the total seconds plus the inputted seconds then convert to time
         self.hour, self.minute, self.second = nt.hour, nt.minute, nt.second 
         return None
+
 
     def time_to_sec(self):
         '''convert a time object to a single integer representing the 
@@ -53,3 +54,5 @@ def sec_to_time(seconds):
     minutes, time.second = divmod(seconds, 60)
     time.hour, time.minute = divmod(minutes, 60)
     return time
+
+
